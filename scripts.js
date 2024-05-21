@@ -4,6 +4,10 @@ const provinces = ['Western Cape', 'Gauteng', 'Northern Cape', 'Eastern Cape', '
 // A list of names:
 const names = ['Ashwin', 'Sibongile', 'Jan-Hendrik', 'Sifso', 'Shailen', 'Frikkie']
 
+names.forEach((firstName) => console.log(firstName));
+
+names.forEach((firstName, index) => console.log(`${firstName} (${provinces[index]})`));
+
 // A list of products with prices:
 const products = [
   { product: 'banana', price: "2" },
