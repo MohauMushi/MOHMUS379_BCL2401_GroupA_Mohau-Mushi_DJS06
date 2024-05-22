@@ -11,7 +11,8 @@ names.forEach((firstName, index) => console.log(`${firstName} (${provinces[index
 
 provinces.map((province) => console.log(province.toUpperCase()));
 
-names.map((firstName) => console.log(firstName.length))
+const nameLength = names.map((firstName) => firstName.length);
+console.log(nameLength);
 
 console.log(provinces.sort())
 
