@@ -21,6 +21,14 @@ const containAnyS = names.some(firstName => firstName.toLowerCase().includes(`s`
 if (containAnyS) {
   console.log(names.map(firstName => firstName.toLowerCase().includes(`s`)));
 }
+
+const nameObj = names.reduce((obj, key, index) => {
+  obj[key] = provinces[index];
+  return obj;
+}, {});
+
+console.log(nameObj);
+
 // A list of products with prices:
 const products = [
   { product: 'banana', price: "2" },
