@@ -5,6 +5,7 @@ const provinces = ['Western Cape', 'Gauteng', 'Northern Cape', 'Eastern Cape', '
 const names = ['Ashwin', 'Sibongile', 'Jan-Hendrik', 'Sifso', 'Shailen', 'Frikkie']
 
 names.forEach((firstName) => console.log(firstName));
+provinces.forEach((province) => console.log(province));
 
 names.forEach((firstName, index) => console.log(`${firstName} (${provinces[index]})`));
 
