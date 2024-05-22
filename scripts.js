@@ -13,6 +13,9 @@ provinces.map((province) => console.log(province.toUpperCase()));
 names.map((firstName) => console.log(firstName.length))
 
 console.log(provinces.sort())
+
+const filterOutCape = provinces.filter(provinces => !provinces.includes(`Cape`));
+console.log(filterOutCape);
 // A list of products with prices:
 const products = [
   { product: 'banana', price: "2" },
