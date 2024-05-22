@@ -16,6 +16,11 @@ console.log(provinces.sort())
 
 const filterOutCape = provinces.filter(provinces => !provinces.includes(`Cape`));
 console.log(filterOutCape);
+
+const containAnyS = names.some(firstName => firstName.toLowerCase().includes(`s`));
+if (containAnyS) {
+  console.log(names.map(firstName => firstName.toLowerCase().includes(`s`)));
+}
 // A list of products with prices:
 const products = [
   { product: 'banana', price: "2" },
