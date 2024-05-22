@@ -41,3 +41,41 @@ const products = [
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
 ]
+
+console.log(
+  // Log Products
+  products.map(name => name.product),
+
+  // Filter by Name Length
+  products.filter(name => name.product.length <= 5).map(name => name.product),
+
+  // Price Manipulation
+  products
+  .filter(product => (typeof product.price === 'string' && product.price.trim() !== '') || (typeof product.price === 'number'))
+  .map(product => parseInt(product.price))
+  .reduce((total, currentPrice) => total + currentPrice, 0), 
+
+  // Concatenate Product Names
+  products.reduce((productNames, product) => {
+    return productNames.concat(product.product);
+  }, ``),
+
+  // Find Extremes in Prices
+  products.reduce((results, product) =>{
+    const price = parseInt(product.price);
+    if(price){
+      results.Highest = Math.max(results.Highest || 0, price);
+    }
+    if(price){
+      results.Lowest = Math.min(results.Lowest || Infinity, price);
+    }
+    return results;
+  }, {Highest: undefined, Lowest: undefined}),
+
+  // Object Transformation
+  Object.entries(products).reduce((acc, [index, { product, price }]) => {
+    acc[index] = { name: product, cost: price };
+    return acc;
+  }, []),
+
+);
