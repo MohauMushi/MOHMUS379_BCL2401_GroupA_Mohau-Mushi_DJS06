@@ -45,7 +45,7 @@ console.log(provinces.sort());
 const filterOutCape = provinces.filter(
   (provinces) => !provinces.includes(`Cape`)
 );
-console.log(filterOutCape);
+console.log(filterOutCape.length);
 
 /*
   Used some method to check if any first name in the names array contains the letter "S".
