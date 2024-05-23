@@ -51,9 +51,7 @@ console.log(filterOutCape.length);
   Used some method to check if any first name in the names array contains the letter "S".
   If at least one name contains "S", it logs an array of booleans indicating which names contain ""
  */
-const containAnyS = names.some((firstName) =>
-  firstName.includes(`S`)
-);
+const containAnyS = names.some((firstName) => firstName.includes(`S`));
 if (containAnyS) {
   console.log(names.map((firstName) => firstName.includes(`S`)));
 }
@@ -105,7 +103,7 @@ console.log(
         typeof product.price === "number"
     )
     .map((product) => parseInt(product.price))
-    .reduce((total, currentPrice) => total + currentPrice, 0),
+    .reduce((accumulator, currentPrice) => accumulator + currentPrice, 0),
 
   /* 
   Concatenate Product Names - it Concatenates the product property of each object in the products array to a single string using the reduce method
@@ -137,8 +135,8 @@ console.log(
   Object Transformation - Transforms the products array into a new array of objects with name and cost properties using the reduce method. 
   The name property is set to the product property value, and the cost property is set to the price property value
   */
-  Object.entries(products).reduce((acc, [index, { product, price }]) => {
-    acc[index] = { name: product, cost: price };
-    return acc;
+  Object.entries(products).reduce((accumulator, [index, { product, price }]) => {
+    accumulator[index] = { name: product, cost: price };
+    return accumulator;
   }, [])
 );
