@@ -48,14 +48,14 @@ const filterOutCape = provinces.filter(
 console.log(filterOutCape);
 
 /*
-  Used some method to check if any first name in the names array contains the letter "s".
-  If at least one name contains "s", it logs an array of booleans indicating which names contain "s"
+  Used some method to check if any first name in the names array contains the letter "S".
+  If at least one name contains "S", it logs an array of booleans indicating which names contain ""
  */
 const containAnyS = names.some((firstName) =>
-  firstName.toLowerCase().includes(`s`)
+  firstName.includes(`S`)
 );
 if (containAnyS) {
-  console.log(names.map((firstName) => firstName.toLowerCase().includes(`s`)));
+  console.log(names.map((firstName) => firstName.includes(`S`)));
 }
 
 /* 
