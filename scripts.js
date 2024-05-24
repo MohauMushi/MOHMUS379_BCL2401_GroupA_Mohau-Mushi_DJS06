@@ -112,18 +112,16 @@ console.log(
     return productNames.concat(product.product);
   }, ``),
 
-  /* 
-  Find Extremes in Prices - Finds the highest and lowest prices in the products array using the reduce method. 
-  It initializes an object with Highest and Lowest properties set to undefined, and 
-  then updates these properties with the maximum and minimum values of the price property, respectively
+  /* Find Extremes in Prices
+  Finds the highest and lowest prices in the products array using the reduce method.
+  It initializes an object with highest and lowest properties set to undefined,
+  and then updates these properties with the maximum and minimum values of the price property, respectively.
   */
   products.reduce(
     (results, product) => {
       const price = parseInt(product.price);
-      if (price) {
-        results.Highest = Math.max(results.Highest || 0, price);
-      }
-      if (price) {
+      if (!isNaN(price)) {
+        results.Highest = Math.max(results.Highest || -Infinity, price);
         results.Lowest = Math.min(results.Lowest || Infinity, price);
       }
       return results;
@@ -135,8 +133,11 @@ console.log(
   Object Transformation - Transforms the products array into a new array of objects with name and cost properties using the reduce method. 
   The name property is set to the product property value, and the cost property is set to the price property value
   */
-  Object.entries(products).reduce((accumulator, [index, { product, price }]) => {
-    accumulator[index] = { name: product, cost: price };
-    return accumulator;
-  }, [])
+  Object.entries(products).reduce(
+    (accumulator, [index, { product, price }]) => {
+      accumulator[index] = { name: product, cost: price };
+      return accumulator;
+    },
+    []
+  )
 );
